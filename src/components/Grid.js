@@ -7,6 +7,7 @@ export function Grid(props) {
     }
 
     return <button
+      disabled={props.disabled}
       className="board-cell"
       key={index}
       onClick={() => props.onCellClick(index)}

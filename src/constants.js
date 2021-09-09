@@ -1,5 +1,6 @@
 export const STATUS_CODES = {
   NO_WINNER: 201,
   YES_WINNER: 200,
+  DRAW: 202,
   ILLEGAL: 403,
 }
