@@ -37,6 +37,7 @@ class App extends React.Component {
     });
 
 
+    // TODO: Alerts could be better. For now, let's use hard-coded alerts.
     if (response.status == STATUS_CODES.ILLEGAL) {
       alert(response.data);
       this.disableBoard();
