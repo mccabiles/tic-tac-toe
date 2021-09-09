@@ -70,6 +70,7 @@ const isDraw = (boardState: BoardState): Boolean => {
 app.post('/checkBoard', (req: express.Request, res: express.Response) => {
   const boardState = req.body.boardState;
 
+  // Also serves as validation:
   if (isIllegal(boardState)) {
     return res.status(403).send('Illegal board state');
   }
