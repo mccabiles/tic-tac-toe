@@ -1,7 +1,7 @@
 import { Grid } from './components/Grid';
 import './App.css';
 import React from 'react';
-import { checkBoardState } from './api';
+import { checkBoardState } from './services/api';
 
 const DEFAULT_BOARD = [
   '', '', '', '', '', '', '', '', '',
