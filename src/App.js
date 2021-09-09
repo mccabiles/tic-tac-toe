@@ -1,6 +1,7 @@
 import { Grid } from './components/Grid';
 import './App.css';
 import React from 'react';
+import { checkBoardState } from './api';
 
 const DEFAULT_BOARD = [
   '', '', '', '', '', '', '', '', '',
@@ -13,16 +14,16 @@ class App extends React.Component {
       board: [...DEFAULT_BOARD],
       currentPlayer: 'X'
     }
-
-    console.log(this.state, this.state.board);
   }
 
-  onCellClick = (index) => {
+  onCellClick = async (index) => {
     this.state.board[index] = this.state.currentPlayer;
     this.setState({
       board: this.state.board,
       currentPlayer: this.state.currentPlayer === 'X' ? 'O' : 'X'
     });
+
+    await checkBoardState(this.state.board);
   };
 
   render() {
